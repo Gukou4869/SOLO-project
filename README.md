@@ -1,19 +1,22 @@
-# My theme "Calorie Caliculator"
+idea
+"An app that can caliculate the total Calories that you ate today"
 
 MVP(minimam viable product)
+This app should be able to show your daily target calorie depent on your height/weight/gender/excercise frequency/your target(Gain weight?/Lose weight?)
+This app should be able to take the food data from food API
 
-1. This app should be able to show daily calorie with each intake by nutrtions (Carbo/Protein/Fat)
-2. This app should be able to show your daily target calorie depent on your height/weight/gender/excercise frequency/your target(Gain weight?/Lose weight?)
-3. This app should be able to set the personal data about your height/weight/gender/excercise frequency
-4. This app should be able to show and register the calorie of the meal that you ate today.
-5. This app should be able to store the calories of some specific food (Chicken or Avocado like that that I often eat when lose weight.)
-6. This app should be able to show yout rest of calories that you can eat by today.
+Advanced
+This app should be able to show daily calorie with each intake by nutrtions (Carbo/Protein/Fat)
+This app should be able to set the personal data about your height/weight/gender/excercise frequency
+This app should be able to show and register the calorie of the meal that you ate today.
+This app should be able to show your rest of calories that you can eat by today.
 
 Tech
 
 1. React
 2. GraphQL
 3. express
+4. food API
 
 Persona
 

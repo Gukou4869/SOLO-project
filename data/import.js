@@ -3,7 +3,7 @@ const knex = require("../server/knex.js");
 
 const seedFoodData = async () => {
   try {
-    const foodData = JSON.parse(fs.readFileSync("./data/foodData.json"));
+    const foodData = JSON.parse(fs.readFileSync("./foodData"));
     for (const data of foodData) {
       const id = data.FoodType.id;
       const name = data.FoodType.name;

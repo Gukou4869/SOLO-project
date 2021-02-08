@@ -14,7 +14,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint --fix --ext .js --ext .jsx .",
     "makeSeed": "knex seed:make",
-    "makeMigration": "knex migrate:make --knexfile ./server/knexfile.js"
+    "seed": "knex seed:run --knexfile ./server/knexfile.js",
+    "makeMigration": "knex migrate:make --knexfile ./server/knexfile.js",
+    "migrate": "knex migrate:latest --knexfile ./server/knexfile.js"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
