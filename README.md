@@ -1,5 +1,6 @@
 # My theme "Calory Caliculator"
 
+MVP(minimam viable product)
 1. This app should be able to show daily calorie with each intake by nutrtions (Carbo/Protein/Fat)
 2. This app should be able to show your daily target calorie depent on your height/weight/gender/excercise frequency/your target(Gain weight?/Lose weight?)
 3. This app should be able to set the personal data about your height/weight/gender/excercise frequency
@@ -10,6 +11,7 @@ Persona
 1. Those who wanna to build their body systematically.(We can use this app for Gain or Lose)
 
 Time Schedule
+
 2/8(Mon)
 1. Decide a theme of App
 2. Decide MVP(minimam viable product)/ outline of App
