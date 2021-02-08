@@ -36,3 +36,12 @@ Time Schedule
 
 1. Hacking
 2. Practice of presentation
+
+create table foodtype
+(id int,
+name varchar(100),
+carbohydrate numeric,
+protein numeric,
+fat numeric,
+calories numeric,
+gram numeric);

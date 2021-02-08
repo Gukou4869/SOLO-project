@@ -3,17 +3,17 @@ const knex = require("../server/knex.js");
 
 const seedFoodData = async () => {
   try {
-    const foodData = JSON.parse(fs.readFileSync("./data/locations.json"));
+    const foodData = JSON.parse(fs.readFileSync("./data/foodData.json"));
     for (const data of foodData) {
-      const id = foodData.FoodType.id;
-      const name = foodData.FoodType.name;
-      const carbohydrade = foodData.FoodType.carbohydrade;
-      const protein = foodData.FoodType.protein;
-      const fat = foodData.FoodType.fat;
-      const calories = foodData.FoodType.calories;
-      const gram = foodData.FoodType.gram;
+      const id = data.FoodType.id;
+      const name = data.FoodType.name;
+      const carbohydrade = data.FoodType.carbohydrade;
+      const protein = data.FoodType.protein;
+      const fat = data.FoodType.fat;
+      const calories = data.FoodType.calories;
+      const gram = data.FoodType.gram;
 
-      await knex("foodDatabase").insert({
+      await knex("foodtype").insert({
         id,
         name,
         carbohydrade,
