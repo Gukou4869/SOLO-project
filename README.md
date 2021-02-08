@@ -1,4 +1,4 @@
-# My theme "Calory Caliculator"
+# My theme "Calorie Caliculator"
 
 MVP(minimam viable product)
 1. This app should be able to show daily calorie with each intake by nutrtions (Carbo/Protein/Fat)
