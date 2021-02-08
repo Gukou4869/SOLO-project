@@ -5,12 +5,13 @@ const seedFoodData = async () => {
   try {
     const foodData = JSON.parse(fs.readFileSync("./data/locations.json"));
     for (const data of foodData) {
-      const id;
-      const name;
-      const carbohydrade;
-      const protein;
-      const fat;
-      const calories;
+      const id = foodData.FoodType.id;
+      const name = foodData.FoodType.name;
+      const carbohydrade = foodData.FoodType.carbohydrade;
+      const protein = foodData.FoodType.protein;
+      const fat = foodData.FoodType.fat;
+      const calories = foodData.FoodType.calories;
+      const gram = foodData.FoodType.gram;
 
       await knex("foodDatabase").insert({
         id,
@@ -19,6 +20,7 @@ const seedFoodData = async () => {
         protein,
         fat,
         calories,
+        gram,
       });
     }
   } catch (err) {
