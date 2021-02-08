@@ -7,11 +7,13 @@ MVP(minimam viable product)
 3. This app should be able to set the personal data about your height/weight/gender/excercise frequency
 4. This app should be able to show and register the calorie of the meal that you ate today.
 5. This app should be able to store the calories of some specific food (Chicken or Avocado like that that I often eat when lose weight.)
+6. This app should be able to show yout rest of calories that you can eat by today.
 
 Tech
 
 1. React
 2. GraphQL
+3. express
 
 Persona
 
