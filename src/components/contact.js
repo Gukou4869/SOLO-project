@@ -50,7 +50,6 @@ const Contacts = () => {
       nameData = { value: name, label: name };
       result.push(nameData);
     }
-    console.log(result);
     return result;
   };
 

@@ -2,24 +2,27 @@
   {
     "FoodType": [
       {
+        "id": 1,
         "name": "Chicken Breast",
-        "carbohydrade": 0,
+        "carbohydrate": 0,
         "protein": 22.3,
         "fat": 1.5,
         "calories": 108,
         "gram": 100
       },
       {
+        "id": 2,
         "name": "White rice",
-        "carbohydrade": 0,
+        "carbohydrate": 0,
         "protein": 22.3,
         "fat": 1.5,
         "calories": 269,
         "gram": 160
       },
       {
+        "id": 3,
         "name": "Avocado",
-        "carbohydrade": 8.6,
+        "carbohydrate": 8.6,
         "protein": 3.5,
         "fat": 26.1,
         "calories": 262,

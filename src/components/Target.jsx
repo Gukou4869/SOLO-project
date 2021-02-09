@@ -13,9 +13,17 @@ const Target = (props) => {
   const TotalCalories = () => {
     const persons = props.person;
     const checkExcerciseFrequency = persons[props.user].excerciseFrequency;
-    return kcal * checkExcerciseFrequency;
+    if (checkExcerciseFrequency === "1") {
+      return kcal * 1.5;
+    } else if (checkExcerciseFrequency === "2") {
+      return kcal * 1.7;
+    } else if (checkExcerciseFrequency === "3") {
+      return kcal * 1.9;
+    } else if (checkExcerciseFrequency === "4") {
+      return kcal * 2.1;
+    }
   };
-  const total = TotalCalories();
+  const total = Math.floor(TotalCalories());
 
   const proteinCal = () => {
     const persons = props.person;
@@ -30,7 +38,7 @@ const Target = (props) => {
       return checkWeight * 2.6;
     }
   };
-  const Protein = proteinCal();
+  const Protein = Math.floor(proteinCal());
 
   const fatCal = () => {
     const persons = props.person;
@@ -50,7 +58,7 @@ const Target = (props) => {
   const carboCal = () => {
     return (total - (Protein + Fat)) / 4;
   };
-  const Carbo = carboCal();
+  const Carbo = Math.floor(carboCal());
 
   const TargetCal = () => {
     if (props.goal === 1) {
@@ -74,6 +82,16 @@ const Target = (props) => {
   };
   const CAL = calDif();
 
+  const Dif = () => {
+    return total - TARGETCAL;
+  };
+  let DIF;
+  if (Dif() < 0) {
+    DIF = -Dif();
+  } else {
+    DIF = +Dif();
+  }
+
   return (
     <React.Fragment>
       <Table striped bordered hover>
@@ -88,7 +106,7 @@ const Target = (props) => {
           <tr>
             <td>{total} kcal</td>
             <td>{TARGETCAL} kcal</td>
-            <td>{TARGETCAL} kcal</td>
+            <td>{DIF} kcal</td>
           </tr>
         </tbody>
       </Table>
