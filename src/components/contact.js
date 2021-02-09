@@ -3,7 +3,6 @@ import Select from "react-select";
 import Form from "./Form";
 import firebaseDb from "../firebase";
 import Setting from "./Setting";
-import Food from "./Food";
 import "./contact.css";
 
 const Contacts = () => {
@@ -112,7 +111,6 @@ const Contacts = () => {
           </div>
         </div>
         <Setting newNameData={newNameData} personalObjects={personalObjects} />
-        <Food />
       </div>
     </React.Fragment>
   );

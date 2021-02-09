@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import Food from "./Food";
+import Contact from "./contact";
 
 const Navber = () => {
   const [nav, setNav] = useState("home");
@@ -35,7 +37,7 @@ const Navber = () => {
           </Nav.Link>
         </Nav>
       </Navbar>
-      {toggleSetting}
+      {toggleSetting()}
     </>
   );
 };

@@ -9,7 +9,6 @@ export default function App() {
       <div className="row">
         <div className="col-md-8 offset-md-1">
           <Navbar />
-          <Contacts />
         </div>
       </div>
     </div>
