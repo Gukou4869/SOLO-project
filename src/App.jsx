@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Setting from "./components/Setting";
 import Contacts from "./components/contact";
 
 export default function App() {

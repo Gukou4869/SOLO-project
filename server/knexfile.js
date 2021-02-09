@@ -8,5 +8,3 @@ const config = {
   },
   searchPath: "public",
 };
-
-module.exports = config;

@@ -1,78 +1,92 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import Caliculation from "./caliculate";
+import Target from "./Target";
+import "./Setting.css";
 
-export default function Setting() {
-  const [gender, setGender] = useState("default");
-  const [weight, setWeight] = useState("default");
-  const [height, setHeight] = useState("default");
-  const [excercise, setExcercise] = useState("default");
+const Setting = (props) => {
+  const [user, setUser] = useState("");
+  const [goal, setGoal] = useState("");
+  const [target, setTarget] = useState("false");
 
-  const onGenderInput = (value) => {
-    setGender(value);
+  const toggleTarget = () => {
+    if (goal === "" || user === "") {
+      alert("Please select User and Target first!");
+      return;
+    }
+    if (target === "false") {
+      setTarget("true");
+    } else {
+      setTarget("false");
+    }
   };
 
-  const onWeightInput = (e) => {
-    setWeight(e.target.value);
+  const handleUserChange = (e) => {
+    setUser(e.value);
   };
 
-  const onHeightInput = (e) => {
-    setHeight(e.target.value);
+  const handleTargetChange = (e) => {
+    setGoal(e.value);
   };
-
-  const onExcerciseInput = (value) => {
-    setExcercise(value);
-  };
-  const caliculateCalories = weight * 22;
-  let total;
-  if (excercise.value === "1") {
-    total = Math.floor(caliculateCalories * 1.5);
-  }
-  if (excercise.value === "2") {
-    total = Math.floor(caliculateCalories * 1.7);
-  }
-  if (excercise.value === "3") {
-    total = Math.floor(caliculateCalories * 1.9);
-  }
-  if (excercise.value === "4") {
-    total = Math.floor(caliculateCalories * 2.1);
-  }
-  const click = () => {
-    console.log(excercise.value);
-  };
-
-  const option = [
-    { value: "Male", label: "Male" },
-    { value: "Female", label: "Female" },
+  const yourTarget = [
+    { value: 1, label: "Lean Bulk" },
+    { value: 2, label: "Weight Less(S)" },
+    { value: 3, label: "Weight Less(M)" },
+    { value: 4, label: "Weight Less(L)" },
   ];
-  const option2 = [
-    { value: "1", label: "1. Low - Only desk Work" },
-    { value: "2", label: "2. Middle - Desk work & Walking(1h)" },
-    { value: "3", label: "3. High - Have some excercise habit" },
-    { value: "4", label: "4. Super high - Excercise every day" },
-  ];
+
+  const personal = () => {
+    let obj = {};
+    const personName = props.personalObjects;
+    for (const i in personName) {
+      const personal = personName[i];
+      const personalName = personal.fullName;
+      obj[personalName] = personName[i];
+    }
+    return obj;
+  };
+  const person = personal();
+
+  const showTarget = () => {
+    if (target === "true") {
+      return (
+        <div className="show">
+          <Target person={person} goal={goal} user={user} />
+        </div>
+      );
+    }
+  };
   return (
-    <div className="setting">
-      <h1>Setting</h1>
-      <input type="number" placeholder="weight" onChange={onWeightInput} />
-      <input type="number" placeholder="height" onChange={onHeightInput} />
-      <Select
-        placeholder="Select Gender"
-        options={option}
-        onChange={onGenderInput}
-      />
-      <Select
-        placeholder="Select Excercise Frequency"
-        options={option2}
-        onChange={onExcerciseInput}
-      />
-      <input
-        type="button"
-        value="Caliculate your needed calorie"
-        onClick={click}
-      />
-      <h1>Your BasedCalories are {caliculateCalories} kcal</h1>
-      <h2>Your Total Calories burned are {total} kcal</h2>
-    </div>
+    <React.Fragment>
+      <div>
+        <Select
+          options={props.newNameData}
+          placeholder="Selecet User"
+          onChange={handleUserChange}
+        />
+      </div>
+      <div>
+        <Select
+          options={yourTarget}
+          placeholder="Selecet Your Target"
+          onChange={handleTargetChange}
+        />
+      </div>
+      <div className="form-group">
+        <input
+          className="open"
+          type="submit"
+          value={
+            props.target === "false"
+              ? "Check Your Target!"
+              : "Close Your Target"
+          }
+          className="btn btn-primary btn-block"
+          onClick={toggleTarget}
+        />
+      </div>
+      {showTarget()}
+    </React.Fragment>
   );
-}
+};
+
+export default Setting;
