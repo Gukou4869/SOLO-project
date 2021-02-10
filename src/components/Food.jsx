@@ -3,10 +3,13 @@ import { Form, Col, Jumbotron, Button } from "react-bootstrap";
 import axios from "axios";
 import "./Food.css";
 import Select from "react-select";
+import FoodHistory from "./FoodHistory";
+import Setting from "./Setting";
 
 const Food = (props) => {
   const [list, setList] = useState([]);
   const [food, setFood] = useState("");
+  const [amount, setAmount] = useState(0);
   const nameList = [];
   useEffect(() => {
     const api = axios.create({
@@ -24,6 +27,12 @@ const Food = (props) => {
 
   const handleChangeName = (e) => {
     setFood(e.name);
+    console.log(food);
+  };
+
+  const handleChangeAmount = (e) => {
+    setAmount(e.target.value);
+    console.log(amount);
   };
 
   const submitCal = () => {
@@ -40,7 +49,7 @@ const Food = (props) => {
             that you ate today.
           </p>
         </Jumbotron>
-
+        <Setting />
         <Form.Row>
           <Form.Group as={Col} controlId="formGridCity">
             <Form.Label>FOOD</Form.Label>
@@ -48,14 +57,12 @@ const Food = (props) => {
           </Form.Group>
 
           <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>AMOUNT</Form.Label>
-            <Form.Control />
+            <Form.Label>AMOUNT(g)</Form.Label>
+            <Form.Control onChange={handleChangeAmount} />
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={submitCal}>
-            Submit
-          </Button>
         </Form.Row>
       </div>
+      <FoodHistory food={food} amount={amount} />
     </React.Fragment>
   );
 };

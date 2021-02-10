@@ -59,7 +59,7 @@ const Contacts = () => {
       <div className="contact">
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
-            <h1 className="display-4 text-center">Calirie Caliculator</h1>
+            <h1 className="display-4 text-center">Set your profile</h1>
           </div>
         </div>
         <div className="row">
@@ -71,8 +71,8 @@ const Contacts = () => {
               <thead className="thead-light">
                 <tr>
                   <th>FullName</th>
-                  <th>Height</th>
-                  <th>Weight</th>
+                  <th>Height(cm)</th>
+                  <th>Weight(kg)</th>
                   <th>Gender</th>
                   <th>ExcerciseFrequency</th>
                   <th>Actions</th>
