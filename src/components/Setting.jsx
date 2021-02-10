@@ -76,9 +76,7 @@ const Setting = (props) => {
           className="open"
           type="submit"
           value={
-            props.target === "false"
-              ? "Check Your Target!"
-              : "Close Your Target"
+            target === "false" ? "Check Your Target!" : "Close Your Target"
           }
           className="btn btn-primary btn-block"
           onClick={toggleTarget}

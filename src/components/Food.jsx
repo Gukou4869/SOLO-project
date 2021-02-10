@@ -49,7 +49,7 @@ const Food = (props) => {
             that you ate today.
           </p>
         </Jumbotron>
-        <Setting />
+        {/* <Setting />
         <Form.Row>
           <Form.Group as={Col} controlId="formGridCity">
             <Form.Label>FOOD</Form.Label>
@@ -60,9 +60,14 @@ const Food = (props) => {
             <Form.Label>AMOUNT(g)</Form.Label>
             <Form.Control onChange={handleChangeAmount} />
           </Form.Group>
-        </Form.Row>
+        </Form.Row> */}
       </div>
-      <FoodHistory food={food} amount={amount} />
+      <FoodHistory
+        food={food}
+        amount={amount}
+        list={list}
+        nameList={nameList}
+      />
     </React.Fragment>
   );
 };

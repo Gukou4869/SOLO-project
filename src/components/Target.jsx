@@ -13,16 +13,24 @@ const Target = (props) => {
   const TotalCalories = () => {
     const persons = props.person;
     const checkExcerciseFrequency = persons[props.user].excerciseFrequency;
-    if (checkExcerciseFrequency === "1") {
+    console.log(persons[props.user].excerciseFrequency);
+    if (checkExcerciseFrequency === "1. Low - Only desk Work") {
       return kcal * 1.5;
-    } else if (checkExcerciseFrequency === "2") {
+    } else if (
+      checkExcerciseFrequency === "2. Middle - Desk work & Walking(1h)"
+    ) {
       return kcal * 1.7;
-    } else if (checkExcerciseFrequency === "3") {
+    } else if (
+      checkExcerciseFrequency === "3. High - Have some excercise habit"
+    ) {
       return kcal * 1.9;
-    } else if (checkExcerciseFrequency === "4") {
+    } else if (
+      checkExcerciseFrequency === "4. Super high - Excercise every day"
+    ) {
       return kcal * 2.1;
     }
   };
+
   const total = Math.floor(TotalCalories());
 
   const proteinCal = () => {
@@ -58,6 +66,7 @@ const Target = (props) => {
   const carboCal = () => {
     return (total - (Protein + Fat)) / 4;
   };
+
   const Carbo = Math.floor(carboCal());
 
   const TargetCal = () => {

@@ -121,7 +121,7 @@ const Form = (props) => {
           <div className="form-group input-group">
             <div className="input-group-prepend">
               <div className="input-group-text">
-                <i className="fas fa-id-card"></i>
+                <i className="fas fa-user"></i>
               </div>
             </div>
             <Select
@@ -129,6 +129,7 @@ const Form = (props) => {
               options={option}
               name="gender"
               onChange={handlePulldownInput}
+              placeholder="Gender"
             />
           </div>
         </div>
@@ -136,7 +137,7 @@ const Form = (props) => {
           <div className="form-group input-group">
             <div className="input-group-prepend">
               <div className="input-group-text">
-                <i className="fas fa-id-card"></i>
+                <i className="fas fa-user"></i>
               </div>
             </div>
             <Select
@@ -144,14 +145,15 @@ const Form = (props) => {
               options={option2}
               name="excerciseFrequency"
               onChange={handlePulldownInput}
+              placeholder="ExcerciseFrequency"
             />
           </div>
         </div>
         <div className="form-group">
           <input
             type="submit"
-            value={props.currentId === "" ? "Save" : "Update"}
-            className="btn btn-primary btn-block"
+            value={props.currentId === "" ? "Save Profile" : "Update Profile"}
+            className="btn btn-success btn-block"
           />
         </div>
       </div>

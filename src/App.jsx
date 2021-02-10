@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Contacts from "./components/contact";
 import Navbar from "./components/Navbar";
 
 export default function App() {
