@@ -26,7 +26,7 @@ const Navber = () => {
 
   return (
     <>
-      <Navbar bg="primary" variant="dark">
+      <Navbar bg="success" variant="dark">
         <Navbar.Brand href="#home">CCs!</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home" onClick={handleChangeToHome}>

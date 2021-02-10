@@ -163,7 +163,7 @@ const FoodHistory = (props) => {
           </div>
         </div>
       </form>
-      <Table striped bordered hover>
+      {/* <Table striped bordered hover>
         <thead>
           <tr>
             <th>Your Target calories(/day)</th>
@@ -174,7 +174,7 @@ const FoodHistory = (props) => {
             <td> kcal</td>
           </tr>
         </tbody>
-      </Table>
+      </Table> */}
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -213,7 +213,6 @@ const FoodHistory = (props) => {
                 <tr>
                   <th>Food</th>
                   <th>Amount(g)</th>
-                  <th>Time</th>
                   <th>Edit/Delete</th>
                 </tr>
               </thead>
@@ -223,7 +222,6 @@ const FoodHistory = (props) => {
                     <tr key={id}>
                       <td>{foodObjects[id].food}</td>
                       <td>{foodObjects[id].amount}</td>
-                      <td>{times}</td>
                       <td>
                         <a
                           className="btn text-primary"
